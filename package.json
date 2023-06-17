@@ -1,0 +1,21 @@
+{
+  "name": "hn-node",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A command-line Node.js application that fetches and displays the top stories from Hacker News.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "standard",
+    "lint:fix": "standard --fix"
+  },
+  "author": "Anthony Scotti",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
+  }
+}
