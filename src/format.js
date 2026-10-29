@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 
-const HACKERNEWS_URL = 'https://news.ycombinator.com/item?id='
+const HACKER_NEWS_URL = 'https://news.ycombinator.com/item?id='
 
 const TITLE_COLOR = '#FAB005'
 const META_COLOR = '#B8B8B8'
@@ -13,9 +13,14 @@ const LINK_STYLE = chalk.hex(LINK_COLOR).underline
 const SOURCE_URL_STYLE = chalk.hex(SOURCE_URL_COLOR)
 
 export const formatStory = (story, showSourceUrl = false) => {
-  let output = `${TITLE_STYLE(story.title)}\n`
-  output += `${META_STYLE(`score: ${story.score}\tcomments: ${story.descendants}\tuser: ${story.by}`)}\n`
-  output += `url: ${LINK_STYLE(`${HACKERNEWS_URL}${story.id}`)}\n`
+  const title = story.title ?? 'Untitled'
+  const score = story.score ?? 0
+  const comments = story.descendants ?? 0
+  const user = story.by ?? 'unknown'
+
+  let output = `${TITLE_STYLE(title)}\n`
+  output += `${META_STYLE(`score: ${score}\tcomments: ${comments}\tuser: ${user}`)}\n`
+  output += `url: ${LINK_STYLE(`${HACKER_NEWS_URL}${story.id}`)}\n`
 
   if (showSourceUrl && story.url) {
     output += `${SOURCE_URL_STYLE(story.url)}\n`

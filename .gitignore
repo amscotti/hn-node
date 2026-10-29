@@ -1,2 +1,6 @@
 node_modules
 hn
+hn.exe
+coverage
+.DS_Store
+*.log
